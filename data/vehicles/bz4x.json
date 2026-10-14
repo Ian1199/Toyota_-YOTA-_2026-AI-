@@ -1,0 +1,20 @@
+{
+  "id": "bz4x",
+  "name": "TOYOTA bZ4X",
+  "battery_kwh": 74.7,
+  "range_nedc_km": 743,
+  "efficiency_catalog_km_per_kwh": 6.7,
+  "dc_fast_charge": {
+    "power_kw": 160,
+    "connector": "CCS1",
+    "note": "低電量充到 80% 約 28 分鐘"
+  },
+  "ac_charge": {
+    "power_kw": 11,
+    "connector": "SAE J1772",
+    "note": "0–100% 約 7 小時"
+  },
+  "portable_cable_note": "可接一般家用 110V 插座",
+  "warranty": "4 年或 12 萬公里（先到者為準，整車保固）",
+  "source": "bZ4X 型錄"
+}

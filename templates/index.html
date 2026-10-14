@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>電量Yota顧｜Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ build_version }}">
+</head>
+<body>
+
+<div class="app">
+  <!-- 左側面板 -->
+  <aside class="panel">
+    <div class="panel-brand"><span class="dot"></span>電量Yota顧</div>
+
+    <div>
+      <h5>情境</h5>
+      <div class="scenario-list" id="scenarioList">
+        {% for sc in scenarios %}
+        <button class="scenario-btn" type="button" data-scenario="{{ sc.id }}" aria-current="{{ 'true' if loop.first else 'false' }}" {{ 'disabled' if sc.disabled else '' }}>
+          <span class="no">{{ sc.no }}</span>{{ sc.label }}
+        </button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="status-block">
+      <h5>參數</h5>
+
+      <div class="status-row">
+        <label>顧客</label>
+        <div class="val"><span id="statusCustomer">{{ persona.name }} · {{ persona.city }}</span><span class="tag" id="statusCustomerTag">示範</span></div>
+      </div>
+
+      <div class="status-row">
+        <label>月份</label>
+        <div class="val">{{ persona.month_label }}</div>
+      </div>
+
+      <div class="status-row">
+        <label for="homeCharging">住家充電</label>
+        <select id="homeCharging" name="homeCharging">
+          <option value="wallbox" selected>充電樁</option>
+          <option value="outlet">一般插座</option>
+          <option value="none">無法充電</option>
+        </select>
+      </div>
+
+      <div class="status-row">
+        <label for="fuelPrice">油價 元/L</label>
+        <input type="number" id="fuelPrice" name="fuelPrice" value="30" min="1" step="0.5">
+      </div>
+
+      <div class="status-row">
+        <label for="homeElecPrice">電價 元/度</label>
+        <input type="number" id="homeElecPrice" name="homeElecPrice" value="3" min="0" step="0.1">
+      </div>
+
+      <div class="status-row">
+        <label>適配度</label>
+        <div class="val" id="fitScoreDisplay">—</div>
+      </div>
+
+      <button class="reset-btn" type="button" id="resetBtn">重置</button>
+    </div>
+  </aside>
+
+  <!-- 中間舞台：手機／平板 -->
+  <main class="stage">
+    <div class="device iphone active" id="deviceIphone">
+      <div class="screen">
+        <span class="island" aria-hidden="true"></span>
+        <div class="statusbar" aria-hidden="true">
+          <span class="time mono">9:41</span>
+          <span class="icons">
+            <svg width="17" height="11" viewBox="0 0 17 11"><rect x="0" y="6" width="3" height="5" rx="0.5"/><rect x="4.5" y="4" width="3" height="7" rx="0.5"/><rect x="9" y="2" width="3" height="9" rx="0.5"/><rect x="13.5" y="0" width="3" height="11" rx="0.5"/></svg>
+            <svg width="15" height="11" viewBox="0 0 15 11"><path d="M7.5 9.6c.6 0 1.1.5 1.1 1.1s-.5 1.1-1.1 1.1-1.1-.5-1.1-1.1.5-1.1 1.1-1.1zm0-3.4c1.4 0 2.7.5 3.7 1.4l-1.3 1.3c-.6-.5-1.5-.9-2.4-.9s-1.8.3-2.4.9L3.8 7.6c1-.9 2.3-1.4 3.7-1.4zm0-3.5c2.3 0 4.5.9 6.2 2.4l-1.3 1.3C11 5.1 9.3 4.4 7.5 4.4S4 5.1 2.6 6.4L1.3 5.1C3 3.6 5.2 2.7 7.5 2.7z"/></svg>
+            <svg width="24" height="11" viewBox="0 0 24 11"><rect x="0.5" y="0.5" width="20" height="10" rx="2.5" fill="none" stroke="currentColor"/><rect x="2" y="2" width="16" height="7" rx="1.2"/><rect x="21.5" y="3.5" width="1.5" height="4" rx="0.7"/></svg>
+          </span>
+        </div>
+        <div class="screen-body" id="screenBody">
+          <p class="screen-placeholder">選擇情境</p>
+        </div>
+        <span class="home-ind" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div class="device ipad" id="deviceIpad">
+      <div class="screen" id="ipadScreenBody"></div>
+    </div>
+  </main>
+</div>
+
+<script>
+  window.__INITIAL__ = {
+    persona: {{ persona | tojson }},
+    claudeModel: {{ claude_model | tojson }}
+  };
+</script>
+<script src="{{ url_for('static', filename='app.js') }}?v={{ build_version }}"></script>
+</body>
+</html>

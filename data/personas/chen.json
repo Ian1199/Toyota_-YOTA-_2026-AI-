@@ -1,0 +1,67 @@
+{
+  "id": "chen",
+  "name": "陳先生",
+  "age": 52,
+  "gender": "男",
+  "city": "桃園市",
+  "housing": "透天，自有車位，可裝家用充電樁",
+  "current_car": { "fuel_km_per_l": 12, "years_owned": 6 },
+  "concerns_raw": [
+    "過年要回台南，開到一半沒電怎麼辦？",
+    "保養會不會很麻煩？電池壞了要花多少錢？"
+  ],
+  "month": "2026-02",
+  "month_label": "2026 年 2 月",
+  "schedule": [
+    { "date": "2026-02-01", "activity": "附近辦事", "km": 20, "overnight": "home" },
+    { "date": "2026-02-02", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-03", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-04", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-05", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-06", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-07", "activity": "去台中逛街", "km": 120, "overnight": "home", "public_charge_kwh": 15, "note": "百貨停車場順手充 15 度（公共）" },
+    { "date": "2026-02-08", "activity": "不開車", "km": 0, "overnight": "home" },
+    { "date": "2026-02-09", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-10", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-11", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-12", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-13", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-14", "activity": "不開車", "km": 0, "overnight": "home" },
+    { "date": "2026-02-15", "activity": "桃園 → 台南", "km": 290, "overnight": "tainan", "midway_fast_charge_min": 10, "note": "中午休息站快充 10 分鐘" },
+    { "date": "2026-02-16", "activity": "台南市區", "km": 30, "overnight": "tainan" },
+    { "date": "2026-02-17", "activity": "台南市區", "km": 30, "overnight": "tainan" },
+    { "date": "2026-02-18", "activity": "台南 → 桃園", "km": 290, "overnight": "home", "midway_fast_charge_min": 10, "note": "中午休息站快充 10 分鐘" },
+    { "date": "2026-02-19", "activity": "不開車", "km": 0, "overnight": "home" },
+    { "date": "2026-02-20", "activity": "不開車", "km": 0, "overnight": "home" },
+    { "date": "2026-02-21", "activity": "不開車", "km": 0, "overnight": "home" },
+    { "date": "2026-02-22", "activity": "出遊", "km": 120, "overnight": "home", "public_charge_kwh": 15, "note": "順手充 15 度（公共）" },
+    { "date": "2026-02-23", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-24", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-25", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-26", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-27", "activity": "通勤", "km": 40, "overnight": "home" },
+    { "date": "2026-02-28", "activity": "不開車", "km": 0, "overnight": "home" }
+  ],
+  "overnight_charge_hours": { "tainan": 10 },
+  "overnight_charging_note": "2/15–2/17 晚上在台南老家：隨車充電線接 110V，每晚 10 小時",
+  "profile": {
+    "housing": "透天，自有車位，可裝家用充電樁",
+    "parking": "自有車位",
+    "home_charging": "wallbox",
+    "city": "桃園市",
+    "commute_km_per_day": 40,
+    "weekend_trips": [
+      { "km": 120, "note": "去台中逛街" },
+      { "km": 120, "note": "出遊" }
+    ],
+    "long_trips": [
+      { "destination": "台南", "km": 290, "nights": 2, "frequency_per_month": 1 }
+    ],
+    "current_car_km_per_l": 12,
+    "concerns_raw": [
+      "過年要回台南，開到一半沒電怎麼辦？",
+      "保養會不會很麻煩？電池壞了要花多少錢？"
+    ]
+  },
+  "_source": "SPEC.md §8；合計 1,500 km"
+}
